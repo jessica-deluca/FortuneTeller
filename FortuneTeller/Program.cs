@@ -127,6 +127,7 @@ namespace FortuneTeller
             Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + ", a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".");
 
 
+            // stretch branch
         }
     }
 }
