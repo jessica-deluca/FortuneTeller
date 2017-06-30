@@ -80,7 +80,7 @@ namespace FortuneTeller
 
             string modeOfTransportation = "";
 
-            switch (colorLower) // Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation
+            switch (userColor) // Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation
             {
                 case "red":
                     modeOfTransportation = "car";
@@ -125,6 +125,7 @@ namespace FortuneTeller
             // Print: [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
 
             Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + ", a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".");
+
 
         }
     }
