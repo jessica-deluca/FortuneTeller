@@ -12,19 +12,19 @@ namespace FortuneTeller
         {
             // Part 1
 
-            Console.WriteLine("Please enter your first name.");
+            Console.WriteLine("Welcome to Fortune Teller!\nTo know your future, answer the questions when prompted. Select [Enter] on your keyboard after each answer to proceed to the next question.\nWhat is your first name?");
             string firstName = Console.ReadLine();
 
-            Console.WriteLine("Please enter your last name.");
+            Console.WriteLine("What is your last name?");
             string lastName = Console.ReadLine();
 
-            Console.WriteLine("Please enter your age.");
+            Console.WriteLine("What is your current age?");
             int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Please enter your birth month as a number.");
+            Console.WriteLine("What is your birth month? Please enter it as a number.\n(For example, if your birth month is August, enter the number \"8\".)");
             int birthMonth = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Please enter your favorite ROYGBIV color. (Hint: If you do not know what \"ROYGBIV\" is, enter \"Help\" to get a list of color options.)");
+            Console.WriteLine("What is your favorite ROYGBIV color.\n(If you do not know what \"ROYGBIV\" is, enter \"Help\" to get a list of color options.)");
             string userColor = Console.ReadLine();
 
             string colorLower = userColor.ToLower();
@@ -32,15 +32,15 @@ namespace FortuneTeller
             if (colorLower == "help")
             {
                 Console.WriteLine("Color options: red, orange, yellow, green, blue, indigo, violet");
-                userColor = Console.ReadLine();
+                colorLower = Console.ReadLine();
             }
 
-            Console.WriteLine("Please enter the number of siblings.");
+            Console.WriteLine("How many siblings do you currently have?");
             int numberOfSiblings = int.Parse(Console.ReadLine());
 
             //Part 2
 
-            int yearsUntilRetirement;
+            int yearsUntilRetirement; // don't need to add a new variable here but decided to keep it consistant with code pattern & helps readability of final line of code for printing
 
             if (age % 2 == 0)
             {
@@ -55,50 +55,50 @@ namespace FortuneTeller
 
             if (numberOfSiblings == 0)
             {
-                vacationHome = "Cleveland"; // If user’s siblings is 0, then they will have a vacation home in ____(location)
+                vacationHome = "Paris"; // If user’s siblings is 0, then they will have a vacation home in ____(location)
             }
             else if (numberOfSiblings == 1)
             {
-                vacationHome = "Florida"; // If user’s siblings is 1, then they will have a vacation home in ____(location)
+                vacationHome = "Tuscany"; // If user’s siblings is 1, then they will have a vacation home in ____(location)
             }
             else if (numberOfSiblings == 2)
             {
-                vacationHome = "Italy"; // If user’s siblings is 2, then they will have a vacation home in ____(location)
+                vacationHome = "Hawaii"; // If user’s siblings is 2, then they will have a vacation home in ____(location)
             }
             else if (numberOfSiblings == 3)
             {
-                vacationHome = "Hawaii"; // If user’s siblings is 3, then they will have a vacation home in ____(location)
+                vacationHome = "Alaska"; // If user’s siblings is 3, then they will have a vacation home in ____(location)
             }
             else if (numberOfSiblings > 3)
             {
-                vacationHome = "Paris"; // If user’s siblings is more than 3, then they will have a vacation home in ____(location)
+                vacationHome = "Cleveland"; // If user’s siblings is more than 3, then they will have a vacation home in ____(location)
             }
-            else if (numberOfSiblings <= 0)
+            else if (numberOfSiblings < 0)
             {
-                vacationHome = "Garbage truck"; // If user’s siblings is anything other than a number greater than or equal to 0, they should get a bad vacation home!
+                vacationHome = "a cardboard box"; // If user’s siblings is anything other than a number greater than or equal to 0, they should get a bad vacation home!
             }
 
-            string modeOfTransportation = "";
+            string modeOfTransportation = ""; // don't need to add a new variable here but decided to keep it consistant with code pattern & helps readability of final line of code for printing
 
-            switch (userColor) // Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation
+            switch (colorLower) // Depending on which ROYGBIV color is the user’s favorite, they will have a specific mode of transportation
             {
                 case "red":
-                    modeOfTransportation = "car";
+                    modeOfTransportation = "Mercedes-Benz";
                     break;
                 case "orange":
-                    modeOfTransportation = "bus";
+                    modeOfTransportation = "mini van";
                     break;
                 case "yellow":
-                    modeOfTransportation = "boat";
+                    modeOfTransportation = "luxury yacht";
                     break;
                 case "green":
-                    modeOfTransportation = "plane";
+                    modeOfTransportation = "private jet";
                     break;
                 case "indigo":
-                    modeOfTransportation = "bicycle";
+                    modeOfTransportation = "tricycle";
                     break;
                 case "violet":
-                    modeOfTransportation = "skateboard";
+                    modeOfTransportation = "hoverboard";
                     break;
             }
 
@@ -124,10 +124,8 @@ namespace FortuneTeller
             // Part 3
             // Print: [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
 
-            Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + ", a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".");
-
-
-            // stretch branch
+            Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + ", a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".\nThanks for playing!");
+            
         }
     }
 }
