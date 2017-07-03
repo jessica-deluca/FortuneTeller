@@ -10,9 +10,9 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-            // Stretch Task: used "return;" but may Environment.Exit() may be a better solution; tried testing Environment.Exit() but could not understand how it works or code it properly
+            // STRETCH TASK: used "return;" but may Environment.Exit() may be a better solution; tried testing Environment.Exit() but could not understand how it works or code it properly
 
-            // Part 1
+            // PART 1
 
             Console.WriteLine("Welcome to Fortune Teller!\nTo know your future, answer the questions when prompted. Select [Enter] on your keyboard after each answer to proceed to the next question.\nTo exit at any time, type \"Quit\" then select [Enter].\nWhat is your first name?");
             string firstName = Console.ReadLine();
@@ -95,7 +95,7 @@ namespace FortuneTeller
                 return;
             }
 
-            //Part 2
+            // PART 2
 
             // age determines years until retirement
             int ageConvertedToInt = Convert.ToInt16(age); // convert age to int
@@ -190,7 +190,7 @@ namespace FortuneTeller
                 moneyInBank = 0d;
             }
 
-            // Part 3
+            // PART 3
             // Print: [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
 
             Console.WriteLine("Here is your fortune:\n" + firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + " in the bank, a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".\nThanks for playing!");
