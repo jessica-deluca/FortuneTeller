@@ -10,7 +10,7 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
-            // Stretch Task: used "return;" but may Environment.Exit() may be a better alternative solution; tried testing Environment.Exit() but could not understand how it works or code it properly
+            // Stretch Task: used "return;" but may Environment.Exit() may be a better solution; tried testing Environment.Exit() but could not understand how it works or code it properly
 
             // Part 1
 
@@ -99,7 +99,7 @@ namespace FortuneTeller
 
             // age determines years until retirement
             int ageConvertedToInt = Convert.ToInt16(age); // convert age to int
-            int yearsUntilRetirement; // don't need to add a new variable here but decided to keep it consistant with code pattern & helps readability of code for printing of fortune
+            int yearsUntilRetirement; // don't need to add a new variable here but helps readability of code when printing fortune
 
             if (ageConvertedToInt % 2 == 0) // if age is even number...
             {
@@ -140,7 +140,7 @@ namespace FortuneTeller
             }
 
             // ROYGBIV color determines transportation
-            string modeOfTransportation = ""; // need to enter double quotations or string will be null // don't need to add a new variable here but decided to keep it consistant with code pattern & helps readability of final line of code for printing
+            string modeOfTransportation = ""; // need to enter double quotations or string will be null // don't need to add a new variable here but helps readability of code when printing fortune
 
             colorLower = userColor.ToLower(); // covert string to lowercase
 
