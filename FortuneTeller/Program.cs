@@ -10,6 +10,8 @@ namespace FortuneTeller
     {
         static void Main(string[] args)
         {
+            // Stretch Task: used "return;" but may Environment.Exit() may be a better alternative solution; tried testing Environment.Exit() but could not understand how it works or code it properly
+
             // Part 1
 
             Console.WriteLine("Welcome to Fortune Teller!\nTo know your future, answer the questions when prompted. Select [Enter] on your keyboard after each answer to proceed to the next question.\nTo exit at any time, type \"Quit\" then select [Enter].\nWhat is your first name?");
@@ -56,7 +58,7 @@ namespace FortuneTeller
                 return;
             }
 
-            Console.WriteLine("What is your favorite ROYGBIV color.\n(If you do not know what \"ROYGBIV\" is, enter \"Help\" to get a list of color options.)");
+            Console.WriteLine("What is your favorite ROYGBIV color?\n(If you do not know what ROYGBIV is, enter \"Help\" to get a list of color options.)");
             string userColor = Console.ReadLine();
 
             string colorLower = userColor.ToLower(); // covert string to lowercase to account for QUIT and HELP
@@ -70,7 +72,8 @@ namespace FortuneTeller
             if (colorLower == "help")
             {
                 Console.WriteLine("Color options: red, orange, yellow, green, blue, indigo, violet");
-                colorLower = Console.ReadLine();
+                userColor = Console.ReadLine();
+                colorLower = userColor.ToLower(); // covert string to lowercase
                 string quitColorLower = colorLower.ToLower(); // covert string to lowercase to account for QUIT
                 {
                     if (quitColorLower == "quit")
@@ -100,16 +103,16 @@ namespace FortuneTeller
 
             if (ageConvertedToInt % 2 == 0) // if age is even number...
             {
-                yearsUntilRetirement = 20; // ... retire in 20 years
+                yearsUntilRetirement = 20; // ...retire in 20 years
             }
             else // if age is odd number...
             {
-                yearsUntilRetirement = 35; // ... retire in 35 years
+                yearsUntilRetirement = 35; // ...retire in 35 years
             }
 
             // number of siblings determines vacation home
             decimal numberOfSiblingsConvertedToDecimal = Convert.ToDecimal(numberOfSiblings); // convert age to decimal // decided to use decimal instead of int because directions state "if user enters a number less than 0, they should get a bad vacation home" so if user enters -.5 (for example) they will still get a bad vacation home
-            string vacationHome = "";
+            string vacationHome = ""; // need to enter double quotations or string will be null
 
             if (numberOfSiblingsConvertedToDecimal == 0m)
             {
@@ -137,7 +140,9 @@ namespace FortuneTeller
             }
 
             // ROYGBIV color determines transportation
-            string modeOfTransportation = ""; // don't need to add a new variable here but decided to keep it consistant with code pattern & helps readability of final line of code for printing
+            string modeOfTransportation = ""; // need to enter double quotations or string will be null // don't need to add a new variable here but decided to keep it consistant with code pattern & helps readability of final line of code for printing
+
+            colorLower = userColor.ToLower(); // covert string to lowercase
 
             switch (colorLower)
             {
@@ -153,6 +158,9 @@ namespace FortuneTeller
                 case "green":
                     modeOfTransportation = "private jet";
                     break;
+                case "blue":
+                    modeOfTransportation = "Jeep Wrangler";
+                    break;
                 case "indigo":
                     modeOfTransportation = "tricycle";
                     break;
@@ -167,15 +175,15 @@ namespace FortuneTeller
 
             if (birthMonthConvertedToInt >= 1 && birthMonthConvertedToInt <= 4)
             {
-                moneyInBank = 10000d;
+                moneyInBank = 1000000d;
             }
             else if (birthMonthConvertedToInt >= 5 && birthMonthConvertedToInt <= 8)
             {
-                moneyInBank = 50000d;
+                moneyInBank = 5000000d;
             }
             else if (birthMonthConvertedToInt >= 9 && birthMonthConvertedToInt <= 12)
             {
-                moneyInBank = 100000d;
+                moneyInBank = 20000000d;
             }
             else
             {
@@ -185,7 +193,7 @@ namespace FortuneTeller
             // Part 3
             // Print: [First Name] [Last Name] will retire in [# of Years] with [Amount of Money] in the bank, a vacation home in [Location] and a [Mode of Transportation].
 
-            Console.WriteLine(firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + " in the bank, a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".\nThanks for playing!");
+            Console.WriteLine("Here is your fortune:\n" + firstName + " " + lastName + " will retire in " + yearsUntilRetirement + " years with $" + moneyInBank + " in the bank, a vacation home in " + vacationHome + " and a " + modeOfTransportation + ".\nThanks for playing!");
 
         }
     }
